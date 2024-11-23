@@ -21,7 +21,7 @@ class SearchViewModel: ObservableObject {
         let encodedQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? query
         
         // 검색어를 URL에 직접 포함
-        let baseURL = "http://openapi.foodsafetykorea.go.kr/api/\(apiKey)/COOKRCP01/json/1/50/RCP_NM=\(encodedQuery)"
+        let baseURL = "http://openapi.foodsafetykorea.go.kr/api/\(apiKey)/COOKRCP01/json/1/10/RCP_NM=\(encodedQuery)"
         
         do {
             let result: RecipeRespose = try await withCheckedThrowingContinuation { continuation in
