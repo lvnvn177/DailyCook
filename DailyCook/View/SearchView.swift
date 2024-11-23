@@ -76,8 +76,10 @@ struct SearchView: View {
                                     print("edit = \(edit)")
                                 },
                                   onCommit: {
-                                    viewModel.fetchRecipes(for: search)
-                                    showSearchResult = true
+                                            Task {
+                                            await viewModel.fetchRecipes(for: search)
+                                            showSearchResult = true
+                                            }
                                 })
                         .font(.system(size: 21))
                     }
