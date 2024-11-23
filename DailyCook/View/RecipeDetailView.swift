@@ -1,8 +1,11 @@
 import SwiftUI
 import KFImageManager
+import DataManager
 
 struct RecipeDetailView: View {
     let recipe: Recipe
+    @State private var isSaved: Bool = false
+    private let dataManager = DataManager<Recipe>()
     
     var body: some View {
         ScrollView {
@@ -14,10 +17,21 @@ struct RecipeDetailView: View {
                     .clipped()
                 
                 // 레시피 제목
-                Text(recipe.RCP_NM)
-                    .font(.title)
-                    .bold()
-                    .padding(.horizontal)
+                HStack {
+                    Text(recipe.RCP_NM)
+                        .font(.title)
+                        .bold()
+                    
+                    Spacer()
+                    
+                    Button(action: {
+                        toggleSaveRecipe()
+                    }) {
+                        Image(systemName: isSaved ? "bookmark.fill" : "bookmark")
+                            .font(.title2)
+                    }
+                }
+                .padding(.horizontal)
                 
                 // 카테고리 및 기본 정보
                 VStack(spacing: 10) {
@@ -80,6 +94,29 @@ struct RecipeDetailView: View {
             .padding(.vertical)
         }
         .navigationBarTitleDisplayMode(.inline)
+        .onAppear {
+            checkIfRecipeIsSaved()
+        }
+    }
+    
+    private func checkIfRecipeIsSaved() {
+        let savedRecipes = dataManager.loadItem(forKey: "savedRecipes")
+        isSaved = savedRecipes.contains { $0.id == recipe.id }
+    }
+    
+    private func toggleSaveRecipe() {
+        var savedRecipes = dataManager.loadItem(forKey: "savedRecipes")
+        
+        if isSaved {
+            // 레시피 제거
+            savedRecipes.removeAll { $0.id == recipe.id }
+        } else {
+            // 레시피 추가
+            savedRecipes.append(recipe)
+        }
+        
+        dataManager.saveItem(savedRecipes, forKey: "savedRecipes")
+        isSaved.toggle()
     }
 }
 

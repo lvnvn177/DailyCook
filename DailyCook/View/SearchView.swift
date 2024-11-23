@@ -13,6 +13,7 @@ struct SearchView: View {
     @StateObject private var viewModel = SearchViewModel()
     @State var search: String = ""
     @State var showSearchResult = false
+    @State private var showSavedRecipes = false
     
     var RecipeOptions = ["반찬","국","후식"]
     
@@ -22,7 +23,9 @@ struct SearchView: View {
                 VStack(alignment: .leading) {
                     ZStack {
                         HStack {
-                            Button(action: {}, label: {
+                            Button(action: {
+                                showSavedRecipes = true
+                            }, label: {
                                 VStack(alignment: .leading, spacing: 3) {
                                     ForEach(0..<3) { i in
                                         Capsule()
@@ -95,6 +98,9 @@ struct SearchView: View {
 
                 }
             })
+            .sheet(isPresented: $showSavedRecipes) {
+                SavedRecipesView()
+            }
         }
     }
 }
@@ -102,4 +108,3 @@ struct SearchView: View {
 #Preview {
     SearchView()
 }
-
