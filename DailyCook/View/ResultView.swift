@@ -7,7 +7,7 @@ struct ResultView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 0) {
-                Text("New Recipes")
+                Text("결과")
                     .font(.title)
                     .bold()
                     .frame(maxWidth: .infinity, alignment: .leading)
