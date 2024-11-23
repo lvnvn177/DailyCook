@@ -1,40 +1,66 @@
-//
-//  ResultView.swift
-//  DailyCook
-//
-//  Created by 이영호 on 11/23/24.
-//
-
 import SwiftUI
 import KFImageManager
 
 struct ResultView: View {
     @State var recipes: [Recipe] = []
-
+    
     var body: some View {
         ScrollView {
-            ForEach(recipes) { recipe in
-                NavigationLink(destination: RecipeDetailView(recipe: recipe)) {
-                    HStack {
-                        KFImageManager().loadImage(url: recipe.ATT_FILE_NO_MAIN, placeholder: UIImage(systemName: "photo"))
-                            .frame(width: 100, height: 100)
-                            .clipShape(Circle())
-
-                        VStack(alignment: .leading) {
-                            Text(recipe.RCP_NM)
-                                .font(.headline)
-                            Text(recipe.RCP_PAT2)
-                                .font(.subheadline)
-                                .foregroundStyle(.gray)
-                        }
+            VStack(spacing: 0) {
+                Text("New Recipes")
+                    .font(.title)
+                    .bold()
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding()
+                
+                ForEach(recipes) { recipe in
+                    NavigationLink(destination: RecipeDetailView(recipe: recipe)) {
+                        RecipeRowView(recipe: recipe)
                     }
-                    .padding(.horizontal)
+                    .buttonStyle(PlainButtonStyle())
+                    
+                    Divider()
+                        .padding(.horizontal)
                 }
-                .buttonStyle(PlainButtonStyle())
             }
         }
     }
 }
-//#Preview {
-//    ResultView(recipes: <#[Recipe]#>)
-//}
+
+struct RecipeRowView: View {
+    let recipe: Recipe
+    
+    var body: some View {
+        HStack(spacing: 16) {
+            VStack(alignment: .leading, spacing: 4) {
+                Text(recipe.RCP_NM)
+                    .font(.headline)
+                    .foregroundColor(.primary)
+                
+                Text(recipe.RCP_PAT2)
+                    .font(.subheadline)
+                    .foregroundColor(.gray)
+                
+                HStack {
+                    Image(systemName: "clock")
+                        .foregroundColor(.gray)
+                    Text("10 minutes")
+                        .font(.caption)
+                        .foregroundColor(.gray)
+                }
+                .padding(.top, 4)
+            }
+            
+            Spacer()
+            
+            KFImageManager().loadImage(url: recipe.ATT_FILE_NO_MAIN, placeholder: UIImage(systemName: "photo"))
+                .frame(width: 80, height: 80)
+                .clipShape(RoundedRectangle(cornerRadius: 8))
+        }
+        .padding()
+    }
+}
+
+#Preview {
+    ResultView(recipes: [])
+}
