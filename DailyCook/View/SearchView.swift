@@ -39,15 +39,15 @@ struct SearchView: View {
                             
                             Spacer()
                             
-                            Button(action: {}, label: {
-                                Image(systemName: "bookmark")
-                                    .font(.system(size: 19, weight: .bold))
-                                    .foregroundStyle(Color.black)
-                                    .frame(width: 50, height: 50)
-                                    .clipShape(Circle())
-                                    .background(Circle().strokeBorder(Color.gray.opacity(0.3), lineWidth: 1))
-                                          
-                            })
+//                            Button(action: {}, label: {
+//                                Image(systemName: "bookmark")
+//                                    .font(.system(size: 19, weight: .bold))
+//                                    .foregroundStyle(Color.black)
+//                                    .frame(width: 50, height: 50)
+//                                    .clipShape(Circle())
+//                                    .background(Circle().strokeBorder(Color.gray.opacity(0.3), lineWidth: 1))
+//                                          
+//                            })
                         }
                         .padding(.horizontal)
                         
