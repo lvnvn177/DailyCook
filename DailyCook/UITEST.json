@@ -1,0 +1,49 @@
+{
+    "type": "stack",
+    "id": "mainContainer",
+    "stackAxis": "vertical",
+    "stackAlignment": "leading",
+    "style": {
+        "padding": 16,
+        "backgroundColor": "#FFFFFF"
+    },
+    "children": [
+        {
+            "type": "text",
+            "id": "title",
+            "content": "Welcome",
+            "style": {
+                "fontSize": 24,
+                "fontWeight": 700,
+                "foregroundColor": "#000000"
+            }
+        },
+        {
+            "type": "image",
+            "id": "profileImage",
+            "content": "https://example.com/profile.jpg",
+            "style": {
+                "width": 100,
+                "height": 100,
+                "cornerRadius": 50
+            }
+        },
+        {
+            "type": "button",
+            "id": "actionButton",
+            "content": "Click Me",
+            "style": {
+                "backgroundColor": "#007AFF",
+                "foregroundColor": "#FFFFFF",
+                "cornerRadius": 8,
+                "padding": 12
+            },
+            "action": {
+                "type": "buttonTapped",
+                "payload": {
+                    "buttonId": "actionButton"
+                }
+            }
+        }
+    ]
+}

@@ -22,6 +22,8 @@
 		71EA9B102CF1D5C20074ACD8 /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EA9B0F2CF1D5C20074ACD8 /* RecipeDetailView.swift */; };
 		71EA9B152CF1FF650074ACD8 /* DataManager in Frameworks */ = {isa = PBXBuildFile; productRef = 71EA9B142CF1FF650074ACD8 /* DataManager */; };
 		71EA9B172CF205010074ACD8 /* SaveRecipesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EA9B162CF205000074ACD8 /* SaveRecipesView.swift */; };
+		71EA9B202CF336A70074ACD8 /* SDUIManager in Frameworks */ = {isa = PBXBuildFile; productRef = 71EA9B1F2CF336A70074ACD8 /* SDUIManager */; };
+		71EA9B212CF3374A0074ACD8 /* UITEST.json in Resources */ = {isa = PBXBuildFile; fileRef = 71EA9B182CF312360074ACD8 /* UITEST.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,7 @@
 		71EA9B0E2CF1D07F0074ACD8 /* Secret.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secret.xcconfig; sourceTree = "<group>"; };
 		71EA9B0F2CF1D5C20074ACD8 /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
 		71EA9B162CF205000074ACD8 /* SaveRecipesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveRecipesView.swift; sourceTree = "<group>"; };
+		71EA9B182CF312360074ACD8 /* UITEST.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UITEST.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +53,7 @@
 				71E4C5862CF19565003BC314 /* ApiManager in Frameworks */,
 				71E4C5882CF19565003BC314 /* KFImageManager in Frameworks */,
 				71EA9B152CF1FF650074ACD8 /* DataManager in Frameworks */,
+				71EA9B202CF336A70074ACD8 /* SDUIManager in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +89,7 @@
 				71E4C5762CF1950E003BC314 /* Assets.xcassets */,
 				71E4C5782CF1950E003BC314 /* Preview Content */,
 				71EA9B0E2CF1D07F0074ACD8 /* Secret.xcconfig */,
+				71EA9B182CF312360074ACD8 /* UITEST.json */,
 			);
 			path = DailyCook;
 			sourceTree = "<group>";
@@ -153,6 +158,7 @@
 				71E4C5852CF19565003BC314 /* ApiManager */,
 				71E4C5872CF19565003BC314 /* KFImageManager */,
 				71EA9B142CF1FF650074ACD8 /* DataManager */,
+				71EA9B1F2CF336A70074ACD8 /* SDUIManager */,
 			);
 			productName = DailyCook;
 			productReference = 71E4C56F2CF1950D003BC314 /* DailyCook.app */;
@@ -199,6 +205,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71EA9B212CF3374A0074ACD8 /* UITEST.json in Resources */,
 				71E4C57A2CF1950E003BC314 /* Preview Assets.xcassets in Resources */,
 				71E4C5772CF1950E003BC314 /* Assets.xcassets in Resources */,
 			);
@@ -461,6 +468,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 71E4C5842CF19565003BC314 /* XCRemoteSwiftPackageReference "iOS-Module" */;
 			productName = DataManager;
+		};
+		71EA9B1F2CF336A70074ACD8 /* SDUIManager */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 71E4C5842CF19565003BC314 /* XCRemoteSwiftPackageReference "iOS-Module" */;
+			productName = SDUIManager;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
