@@ -5,45 +5,291 @@
     "stackAlignment": "leading",
     "style": {
         "padding": 16,
-        "backgroundColor": "#FFFFFF"
+        "backgroundColor": "#F5F5F5"
     },
     "children": [
         {
             "type": "text",
-            "id": "title",
-            "content": "Welcome",
+            "id": "headerTitle",
+            "content": "위젯 데모",
             "style": {
-                "fontSize": 24,
+                "fontSize": 28,
                 "fontWeight": 700,
-                "foregroundColor": "#000000"
+                "foregroundColor": "#1A1A1A",
+                "padding": 8
             }
         },
         {
-            "type": "image",
-            "id": "profileImage",
-            "content": "https://example.com/profile.jpg",
-            "style": {
-                "width": 100,
-                "height": 100,
-                "cornerRadius": 50
-            }
-        },
-        {
-            "type": "button",
-            "id": "actionButton",
-            "content": "Click Me",
-            "style": {
-                "backgroundColor": "#007AFF",
-                "foregroundColor": "#FFFFFF",
-                "cornerRadius": 8,
-                "padding": 12
-            },
-            "action": {
-                "type": "buttonTapped",
-                "payload": {
-                    "buttonId": "actionButton"
+            "type": "stack",
+            "id": "carouselSection",
+            "stackAxis": "vertical",
+            "children": [
+                {
+                    "type": "text",
+                    "id": "carouselTitle",
+                    "content": "Carousel",
+                    "style": {
+                        "fontSize": 20,
+                        "fontWeight": 600,
+                        "foregroundColor": "#1A1A1A",
+                        "padding": 8
+                    }
+                },
+                {
+                    "type": "list",
+                    "id": "carousel",
+                    "style": {
+                        "height": 200
+                    },
+                    "children": [
+                        {
+                            "type": "stack",
+                            "id": "carouselItem1",
+                            "stackAxis": "vertical",
+                            "style": {
+                                "backgroundColor": "#4A90E2",
+                                "cornerRadius": 12,
+                                "width": 160,
+                                "height": 180,
+                                "margin": 8
+                            },
+                            "children": [
+                                {
+                                    "type": "text",
+                                    "id": "carouselText1",
+                                    "content": "Carousel 1",
+                                    "style": {
+                                        "fontSize": 16,
+                                        "foregroundColor": "#FFFFFF",
+                                        "padding": 16
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "stack",
+                            "id": "carouselItem2",
+                            "stackAxis": "vertical",
+                            "style": {
+                                "backgroundColor": "#50E3C2",
+                                "cornerRadius": 12,
+                                "width": 160,
+                                "height": 180,
+                                "margin": 8
+                            },
+                            "children": [
+                                {
+                                    "type": "text",
+                                    "id": "carouselText2",
+                                    "content": "Carousel 2",
+                                    "style": {
+                                        "fontSize": 16,
+                                        "foregroundColor": "#FFFFFF",
+                                        "padding": 16
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "stack",
+                            "id": "carouselItem3",
+                            "stackAxis": "vertical",
+                            "style": {
+                                "backgroundColor": "#FF9500",
+                                "cornerRadius": 12,
+                                "width": 160,
+                                "height": 180,
+                                "margin": 8
+                            },
+                            "children": [
+                                {
+                                    "type": "text",
+                                    "id": "carouselText3",
+                                    "content": "Carousel 3",
+                                    "style": {
+                                        "fontSize": 16,
+                                        "foregroundColor": "#FFFFFF",
+                                        "padding": 16
+                                    }
+                                }
+                            ]
+                        }
+                    ]
                 }
-            }
+            ]
+        },
+        {
+            "type": "stack",
+            "id": "gridSection",
+            "stackAxis": "vertical",
+            "children": [
+                {
+                    "type": "text",
+                    "id": "gridTitle",
+                    "content": "Grid",
+                    "style": {
+                        "fontSize": 20,
+                        "fontWeight": 600,
+                        "foregroundColor": "#1A1A1A",
+                        "padding": 8
+                    }
+                },
+                {
+                    "type": "stack",
+                    "id": "gridContainer",
+                    "stackAxis": "vertical",
+                    "style": {
+                        "padding": 8
+                    },
+                    "children": [
+                        {
+                            "type": "stack",
+                            "id": "gridRow1",
+                            "stackAxis": "horizontal",
+                            "children": [
+                                {
+                                    "type": "stack",
+                                    "id": "gridItem1",
+                                    "stackAxis": "vertical",
+                                    "style": {
+                                        "backgroundColor": "#4A90E2",
+                                        "cornerRadius": 12,
+                                        "width": 160,
+                                        "height": 160,
+                                        "margin": 8
+                                    },
+                                    "children": [
+                                        {
+                                            "type": "text",
+                                            "id": "gridText1",
+                                            "content": "Grid 1",
+                                            "style": {
+                                                "fontSize": 16,
+                                                "foregroundColor": "#FFFFFF",
+                                                "padding": 16
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "stack",
+                                    "id": "gridItem2",
+                                    "stackAxis": "vertical",
+                                    "style": {
+                                        "backgroundColor": "#50E3C2",
+                                        "cornerRadius": 12,
+                                        "width": 160,
+                                        "height": 160,
+                                        "margin": 8
+                                    },
+                                    "children": [
+                                        {
+                                            "type": "text",
+                                            "id": "gridText2",
+                                            "content": "Grid 2",
+                                            "style": {
+                                                "fontSize": 16,
+                                                "foregroundColor": "#FFFFFF",
+                                                "padding": 16
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "stack",
+            "id": "listSection",
+            "stackAxis": "vertical",
+            "children": [
+                {
+                    "type": "text",
+                    "id": "listTitle",
+                    "content": "List",
+                    "style": {
+                        "fontSize": 20,
+                        "fontWeight": 600,
+                        "foregroundColor": "#1A1A1A",
+                        "padding": 8
+                    }
+                },
+                {
+                    "type": "list",
+                    "id": "verticalList",
+                    "children": [
+                        {
+                            "type": "stack",
+                            "id": "listItem1",
+                            "stackAxis": "horizontal",
+                            "style": {
+                                "backgroundColor": "#FFFFFF",
+                                "cornerRadius": 12,
+                                "margin": 8,
+                                "padding": 16
+                            },
+                            "children": [
+                                {
+                                    "type": "text",
+                                    "id": "listText1",
+                                    "content": "List Item 1",
+                                    "style": {
+                                        "fontSize": 16,
+                                        "foregroundColor": "#1A1A1A"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "stack",
+                            "id": "listItem2",
+                            "stackAxis": "horizontal",
+                            "style": {
+                                "backgroundColor": "#FFFFFF",
+                                "cornerRadius": 12,
+                                "margin": 8,
+                                "padding": 16
+                            },
+                            "children": [
+                                {
+                                    "type": "text",
+                                    "id": "listText2",
+                                    "content": "List Item 2",
+                                    "style": {
+                                        "fontSize": 16,
+                                        "foregroundColor": "#1A1A1A"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "stack",
+                            "id": "listItem3",
+                            "stackAxis": "horizontal",
+                            "style": {
+                                "backgroundColor": "#FFFFFF",
+                                "cornerRadius": 12,
+                                "margin": 8,
+                                "padding": 16
+                            },
+                            "children": [
+                                {
+                                    "type": "text",
+                                    "id": "listText3",
+                                    "content": "List Item 3",
+                                    "style": {
+                                        "fontSize": 16,
+                                        "foregroundColor": "#1A1A1A"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }
